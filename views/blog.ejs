@@ -1,0 +1,46 @@
+
+<%- include("./include/header.ejs") %>
+
+     <!--  ************************* Page Title Starts Here ************************** -->
+        <div class="page-nav row">
+            <div class="container">
+                <div class="row">
+                    <h2>Our Blog</h2>
+                    <ul>
+                        <li> <a href="/"><i class="fas fa-home"></i> Home</a></li>
+                        <li><i class="fas fa-angle-double-right"></i></li>
+                        <li> <a href="/write"><i class="fas fa-pen"></i> Write Blog</a></li>
+                        <li><i class="fas fa-angle-double-right"></i> Our Blog</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ######## Page  Title End ####### -->
+
+        
+         
+    <!--*************** Our Blog Starts Here ***************-->
+                     
+    <div id="blog" class="container-fluid blog">
+        <div class="container">
+            <div class="blog-row row">
+                <% blog.forEach(function(blog){ %>
+                    <div class="col-lg-4 col-md-6 ">
+                        <div class="blog-col">
+                            <img src="<%= blog.image %>" alt="<%= blog.title %> image">
+                            <span><%= blog.date %></span>
+                            <h4><%= blog.title %></h4>
+                            <p><%= blog.details.substring(0, 100) %>...  <span><a href="#" class="btn btn-default"> Read More</a></span></p>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+        
+    </div>  
+    
+    
+<%- include("./include/footer.ejs") %>
+    
+  

@@ -1,0 +1,60 @@
+
+<%- include("./include/header.ejs") %>
+
+    
+     <!--  ************************* Page Title Starts Here ************************** -->
+        <div class="page-nav row">
+            <div class="container">
+                <div class="row">
+                    <h2>Our Services</h2>
+                    <ul>
+                        <li> <a href="/"><i class="fas fa-home"></i> Home</a></li>
+                        <li><i class="fas fa-angle-double-right"></i></li>
+                        <li> <a href="/create_services"><i class="fas fa-pen"></i> Create Services</a></li>
+                        <li><i class="fas fa-angle-double-right"></i> Our Services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ######## Page  Title End ####### -->
+
+    <!--*************** Our Services Starts Here ***************-->
+
+
+    <section class="our-service container-fluid">
+        <div class="container">
+            
+            <div class="col-sm-12 blog-cont">
+                <div class="row no-margin">
+                    <% services.forEach(function(services){ %>
+                    <div class="col-lg-4 col-md-6 blog-smk">
+                        <div class="blog-single">
+                            <img src="<%= services.image %>" alt="<%= services.title %> image">
+                            <div class="blog-single-det">
+
+                                <h6><%= services.disease %></h6>
+
+                                <a href="#">
+                                    <a href="/services/<%= services._id %>/show" class="btn btn-primary">More Detail</a>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <% }) %>
+                </div>
+                
+            </div>
+
+        </div>
+    </section>
+    
+    
+    
+  
+        
+   
+
+
+        <%- include("./include/footer.ejs") %>

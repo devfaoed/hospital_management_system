@@ -1,0 +1,80 @@
+
+<%- include("./include/header.ejs") %>
+
+    
+<!--  ************************* Page Title Starts Here ************************** -->
+   <div class="page-nav row">
+       <div class="container">
+           <div class="row">
+               <h2>Research Center</h2>
+               <p>Use me to make enquire about anything on the website</p>
+           </div>
+       </div>
+   </div>
+
+   <!-- ######## Page  Title End ####### -->
+
+<!--*************** Our Services Starts Here ***************-->
+
+
+<section class="our-service container-fluid">
+   <div class="container">
+       
+        
+   <div class="row contact-rooo no-margin">
+    <div class="container">
+        <div class="row">
+            <div style="padding:20px" class="col-sm-8 research" >
+                 <form action="/research" method="get">
+                    <div class="row cont-row">
+                        <div class="col-sm-6"><input type="text" placeholder="enter your text" name="xample" class="form-control input-sm" ></div>
+                        <div class="col-sm-6"><input type="submit" name="submit" class="btn btn-secondary" value="Research"></div>
+                    </div>
+                </form>
+            </div>
+
+            
+            <div class="col-md-12 blog-smk">
+                <div class="blog-single">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Disease</th>
+                                    <th>Cure</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+
+                          
+                            <tbody>
+                                <% search.forEach(function(search){ %>
+                                
+                                <tr>
+                                    <td><img src="<%= search.image %>" alt="<%= search.title %> image"></td>
+                                    <td><%= search.disease %></td>
+                                    <td><%= search.cure %></td>
+                                    <td><%= search.details %></td>
+                                </tr>
+
+                                <% }) %>
+                            </tbody>
+                         
+                        </table>
+                    </div>
+                </div>
+            
+           
+
+        </div>
+    </div>
+</section>
+
+
+
+
+   
+
+
+
+   <%- include("./include/footer.ejs") %>
